@@ -53,7 +53,7 @@ export const largeCardSections = [
 
   export const smallCardSections = [
       {
-          id: 1,
+          id: 3,
           title: "Fire Extinguisher in Toronto",
           cards: [
               {
@@ -107,7 +107,7 @@ export const largeCardSections = [
           ]
       },
       {
-        id: 2,
+        id: 4,
         title: "Fire Extinguisher in Niagara",
         cards: [
             {
@@ -156,7 +156,7 @@ export const largeCardSections = [
             },
             {
               id: 24,
-              image: "fe5.png"
+              image: "fe6.png"
             }
         ]
     }

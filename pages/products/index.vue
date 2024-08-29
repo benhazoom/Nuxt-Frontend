@@ -6,7 +6,7 @@
             :cardsSection="cardInfo"
         />
         <SmallCardDisplay 
-            v-for="cardInfo in smallCardSections"
+            v-for="cardInfo in smallCardInfo"
             :key="cardInfo.id"
             :cardsSection="cardInfo"
         /> 
@@ -19,7 +19,7 @@ import { largeCardSections, smallCardSections } from "@/assets/data.js"
         data(){
             return {
                 largeCardInfo: largeCardSections,
-                smallCardSections: smallCardSections
+                smallCardInfo: smallCardSections
             }
         }
     }

@@ -19,3 +19,4 @@
         margin-bottom: -5rem;
     }
 </style>
+<!-- we can use this layout in a page by specifing it in the script tag in  'export default' like in my-items  -->

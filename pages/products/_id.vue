@@ -8,25 +8,34 @@
                 <RentModal 
                     :product="product"
                 />
+                <img src="@/assets/images/ClickRent.png" alt="Click Rent Image">
             </div>
         </div>
         <div class="whats-included-container">
-            <div class="included-container">
-                <h6>Super Effective</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolorem.</p>
+
+            <div>
+                <div class="included-container">
+                    <h6>Super Effective</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolorem.</p>
+                </div>
+                <div class="included-container">
+                    <h6>Clean & Tidy</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolorem.</p>
+                </div>
+                <div class="included-container">
+                    <h6>Cancel Anytime</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolorem.</p>
+                </div>
+                <div class="included-container">
+                    <h6>Satisfaction Guaranteed</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolorem.</p>
+                </div>
             </div>
-            <div class="included-container">
-                <h6>Clean & Tidy</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolorem.</p>
-            </div>
-            <div class="included-container">
-                <h6>Cancel Anytime</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolorem.</p>
-            </div>
-            <div class="included-container">
-                <h6>Satisfaction Guaranteed</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolorem.</p>
-            </div>        
+            <div class="right-div">
+                <img src="@/assets/images/GoDown.png" alt="Click Rent Image">
+
+            </div> 
+
         </div>
         <div class="description-container">
             <p>
@@ -45,6 +54,9 @@ import { mapGetters } from 'vuex'
     export default {
         computed: {
             product() {
+                //this.$store - The store itself
+                //this.$route - The route itself
+                console.log((this.$store.getters.getProductById(this.$route.params.id)).image)
                 return this.$store.getters.getProductById(this.$route.params.id);
             }
         }
@@ -71,6 +83,8 @@ import { mapGetters } from 'vuex'
 
     .whats-included-container {
         border-bottom: 0.1rem solid rgba(128, 128, 128, 0.151);
+        display: flex;
+
     }
 
     .description-container {
@@ -122,6 +136,9 @@ import { mapGetters } from 'vuex'
 
     .padding {
         padding: 10rem 0
+    }
+    .right-div {
+        float: right
     }
 
 </style>

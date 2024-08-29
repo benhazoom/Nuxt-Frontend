@@ -2,7 +2,8 @@
     <div class="item-container">
         <img :src="require(`@/assets/images/${item.image}`)" alt="">
         <div class="text-container">
-            <h4> {{item.title}} </h4>
+            <h4> {{item.title}}</h4>
+            <h5>From - {{ item.from }} Untill - {{ item.untill }}</h5>
             <p> {{item.description}} </p>
         </div>
     </div>

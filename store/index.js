@@ -1,12 +1,5 @@
 export const state = () => ({
     myRentals: [
-        {
-            id: 1,
-            title: "2L Portable & Safe",
-            snippet: "Special access, beach, its perks, and a remote top-tier service beauty of at restaurants beyond the throughout the weekends go city.",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nobis omnis blanditiis eos, vitae accusamus rem eveniet veritatis voluptas expedita exercitationem at enim perspiciatis alias culpa sint sapiente! Omnis debitis velit nesciunt ratione alias eius officia nobis illum tempora et est iusto maiores possimus, ad aperiam necessitatibus voluptas quis quod, ab soluta sequi voluptate quibusdam. Reiciendis saepe iusto id totam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nobis omnis blanditiis eos, vitae accusamus rem eveniet veritatis voluptas expedita exercitationem at enim perspiciatis alias culpa sint sapiente! Omnis debitis velit nesciunt ratione alias eius officia nobis illum tempora et est iusto maiores possimus, ad aperiam necessitatibus voluptas quis quod, ab soluta sequi voluptate quibusdam. Reiciendis saepe iusto id totam!",
-            image: "fe7.jpg"
-        }
     ],
     products: [
         {
@@ -175,19 +168,22 @@ export const state = () => ({
             title: "Two in One Fire Extinguisher",
             snippet: "This is the first ever two in one fire extinguisher. Good if both you and your friend's houses are burining down",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nobis omnis blanditiis eos, vitae accusamus rem eveniet veritatis voluptas expedita exercitationem at enim perspiciatis alias culpa sint sapiente! Omnis debitis velit nesciunt ratione alias eius officia nobis illum tempora et est iusto maiores possimus, ad aperiam necessitatibus voluptas quis quod, ab soluta sequi voluptate quibusdam. Reiciendis saepe iusto id totam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nobis omnis blanditiis eos, vitae accusamus rem eveniet veritatis voluptas expedita exercitationem at enim perspiciatis alias culpa sint sapiente! Omnis debitis velit nesciunt ratione alias eius officia nobis illum tempora et est iusto maiores possimus, ad aperiam necessitatibus voluptas quis quod, ab soluta sequi voluptate quibusdam. Reiciendis saepe iusto id totam!",
-            image: "fe6.jpg"
+            image: "fe6.png"
           }
     ]
 })
 
 export const mutations = {
-    addItem(state, id){
+    addItem(state,{ id,from,untill}){
         let item = state.products.find(product => product.id == id)
-        state.myRentals.push(item)
+        state.myRentals.push({...item,from,untill})
+        console.log(state)
     },
 }
 
+//this getter find a product by id inside the store and only then sends the information to where it needs to go 
 export const getters = {
+    //callback func inside a callback function - with state we make a function that uses id to find a product in the state
     getProductById: (state) => (id) => {
         return state.products.find(product => product.id == id)
     } 

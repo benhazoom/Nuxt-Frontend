@@ -20,3 +20,6 @@
     }
 
 </style>
+
+<!-- layout/error.vue is a specific name used to route pages with errors here to render this layout -->
+<!-- this layout is nested in the default layout  -->
